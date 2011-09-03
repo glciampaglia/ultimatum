@@ -1,0 +1,65 @@
+{% load i18n %}
+<!-- MEDIA SIZE a4 -->
+<!-- MEDIA TOP 5mm -->
+<!-- MEDIA BOTTOM 50mm -->
+<!-- MEDIA LEFT 50mm -->
+<!-- MEDIA RIGHT 50mm -->
+<html>
+    <head>
+    </head>
+    <body>
+
+        <div align=right>
+            <img src="static/images/eth_logo_black.png" height="60px"/>
+        </div>
+
+        <br/>
+        <p align=right>
+        {% blocktrans %}Chair of Sociology, in particular modeling and simulation{% endblocktrans %}
+        </p>
+        <hr/>
+        <br/>
+
+        <h1>
+            {% blocktrans with participant.amount_paid|floatformat as amount_paid and session.payment_currency as currency %}
+            Donation coupon of {{ amount_paid }}.- {{ currency }}
+            {% endblocktrans %}
+        </h1>
+        <div align=left>
+            <span>{% trans "Participation to experiment" %}&#09;&#09;</span>
+            <span>&#09; {{ session.payment|floatformat }}.-</span>
+        </div>
+        <div align=left>
+            <span>{% trans "Donation to the ICRC" %}&#09;&#09;&#09;&#09;&#09;</span>
+            <span>&ndash;&#09; {{ participant.amount_donated|floatformat }}.-</span>
+        </div>
+        <div align=left>
+            <span>{% trans "Total" %}&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;</span>
+            <span>&#09; {{ participant.amount_paid|floatformat }}.-</span>
+            <span>CHF</span>
+        </div>
+
+        <br/><br/>
+
+        <h2>
+            {% trans "Payment code" %}
+        </h2>
+        <h3 align=center ><i>{{ participant.payment_code }}</i></h3>
+
+        <br/><br/>
+        
+        <h2>
+            {% trans "How to get your payment" %}
+        </h2>
+        <p align=left>{% blocktrans %}
+        Present this coupon to the cashier at the official counter
+        of ETH Z&uuml;rich (F 67.1 in ETH main building, R&auml;mistrasse 101
+        during the opening hours. Open Monday to Friday 11:00&ndash;13:00)
+        {% endblocktrans %}</p>
+
+        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+        <hr/>
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>{% trans "Welcome to the experiment" %}</h1>
+
+{% if error_message %} {# incorrect code or something weird has happened #}
+
+<center> <p><strong>{% trans error_message %}</strong></p> </center>
+
+{% endif %}
+
+{% if session %} {# present or future session exists #}
+
+	{% if ongoing %} {# session is ongoing #}
+
+<script type="text/javascript">
+<!--
+$(function(){
+    $("#enterform").show();
+});
+//-->
+</script>
+<noscript>JavaScript is NOT enabled! Please revise your settings.</noscript>
+<center>
+<br/>
+<div style="display:none" id="enterform">
+<p>{% trans "Please type your login code to access the experiment." %}</p>
+<form action="/experiment/login/" method="post">
+	<input type="text" name="login_code">
+        <input type="submit" value='{% trans "send code" %}'>
+        <input type="reset" value='{% trans "reset" %}'>
+</form>
+</center>
+</div>
+
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+<hr/>
+{% blocktrans with session.start_date.time as start_time and session.end_date.time as end_time and session.end_date.date as end_date %}
+<p>session started at <em>{{ start_time }}</em> and will end at <em>{{ end_time }}</em> of <em>{{ end_date }}</em></p>
+{% endblocktrans %}
+
+	{% else %} {# session is not ongoing #}
+
+<h2>{% trans "There is no ongoing session" %}</h2>
+
+<hr/>
+{% blocktrans with session.start_date.time as start_time and session.start_date.date as start_date %}
+<p>The next session is due at <em>{{ start_time }}</em> of <em> {{ start_date }}</em></p>
+{% endblocktrans %}
+
+	{% endif %}
+
+	{% else %} {# no present or future session exists #}
+
+<hr/>
+<p>{% trans "No sessions are scheduled for the future. Please check back later." %}</p>
+
+{% endif %}
+
+{% endblock %}

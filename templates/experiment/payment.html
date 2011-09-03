@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load i18n %}
+
+{% block content %}
+
+<p align="left">
+{% blocktrans with user.username as username %}Welcome, {{ username }}{% endblocktrans %}
+</p>
+
+<h1>{% trans "Payment verification" %}</h1>
+
+{% if show_form %}
+<h3>{% trans "Please insert the payment code" %}</h3>
+<form action="/experiment/payment/" method="post" id="paymentform">
+    <input type="text" name="payment_code" size="17" maxlength="17" />
+    <br/>
+    <input type="submit" value='{% trans "Check payment code" %}' />
+    <input type="reset" value='{% trans "Reset form" %}' />
+</form>
+{% endif %}
+
+{% if message %}<p align="center"><strong>{{ message }}</strong></p>{% endif %}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+
+<script type="text/javascript" src="/static/polling.js"></script>
+<script type="text/javascript" src="/static/proposal_new.js"></script>
+<script>
+	<!--
+	var proposal = [ {{ game.proposed_trials }} ];
+	{% if participant.is_proposer %}
+	//$(function () {showModalDialog(msg_waitrep)});
+	$(function() { replyUI_proposer() });
+        $(poll_for_redirect('/experiment/{{ game.id }}/reply_poll/'));
+	{% else %}
+	$(function() {replyUI_recipient();})
+	{% endif %}
+	-->
+</script>
+{% endblock %}
+
+{% block content %}
+
+<noscript><h3>JavaScript is not enabled!! Please revise your settings!</h3></noscript>
+<div id="recap" style="display : none">
+	<div class="recapbox">
+		<div class="recapheader"></div>
+		<div>
+			<span><span class="label"></span><br/>
+                                <strong class="propvalue">{% trans "??" %}</strong></span> 
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span>
+		</div>
+	</div>
+	<div class="recapbox">
+		<div class="recapheader"></div>
+		<div>
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span> 
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span>
+		</div>
+	</div>
+</div>
+
+<form id="replyform" style="display : none">
+	<!-- reply submit buttons -->
+        <input style="position:absolute;left:25%;" type="submit" value="{% trans 'accept' %}" class="replybutton" id="replybutton_accept" />
+        <input style="position:absolute;right:25%;" type="submit" value="{% trans 'reject' %}" class="replybutton"  id="replybutton_reject" />
+</form>
+{% endblock %}
+

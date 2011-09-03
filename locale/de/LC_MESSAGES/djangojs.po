@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-22 11:58+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: static/proposal_new.js:5
+msgid "Please wait until the other participant is ready."
+msgstr "Bitte warten Sie bis der andere Mitspieler bereit ist."
+
+#: static/proposal_new.js:6
+msgid ""
+"Please wait until the other participant has proposed how to share the work."
+msgstr "Bitte warten Sie bis der andere Mitspieler einen Vorschlag macht."
+
+#: static/proposal_new.js:7
+msgid "Please wait until the other participant replies to your proposal."
+msgstr ""
+"Bitte warten Sie bis der andere Mitspieler auf Ihren Vorschlag antwortet."
+
+#: static/proposal_new.js:14
+msgid "If participant B <strong>accepts</strong>:"
+msgstr "Falls Mitspieler B <strong>akzeptiert</strong>:"
+
+#: static/proposal_new.js:15
+msgid "If participant B <strong>rejects</strong>:"
+msgstr "Falls Mitspieler B <strong>ablehnt</strong>:"
+
+#: static/proposal_new.js:19
+msgid "If you <strong>accept</strong>"
+msgstr "Falls Sie <strong>akzeptieren</strong>"
+
+#: static/proposal_new.js:20
+msgid "If you <strong>reject</strong>"
+msgstr "Falls Sie <strong>ablehnen</strong>"
+
+#: static/proposal_new.js:85
+msgid "Do you want to send this proposal?"
+msgstr "M&ouml;chten Sie diesen Vorschlag senden?"
+
+#: static/proposal_new.js:109
+msgid "cancel"
+msgstr "l&ouml;schen"
+
+#: static/proposal_new.js:109
+msgid "send"
+msgstr "senden"
+
+#: static/proposal_new.js:117 static/proposal_new.js.py:129
+#: static/proposal_new.js:130 static/proposal_new.js.py:139
+#: static/proposal_new.js:140
+msgid "You"
+msgstr "Sie"
+
+#: static/proposal_new.js:117
+msgid "part. B"
+msgstr "Mitspieler B"
+
+#: static/proposal_new.js:129 static/proposal_new.js.py:130
+msgid "B"
+msgstr ""
+
+#: static/proposal_new.js:139
+#, fuzzy
+msgid "part.  A"
+msgstr "Mitspieler A"
+
+#: static/proposal_new.js:140
+msgid "part. A"
+msgstr "Mitspieler A"

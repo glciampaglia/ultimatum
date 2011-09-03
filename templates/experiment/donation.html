@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+<script type="text/javascript" src="/static/donation.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<noscript><h3>JavaScript is not enabled!! Please revise your settings!</h3></noscript>
+<br/><br/>
+<h2>{% trans "The experiment is completed, thank you!" %}</h2>
+<h3>{% blocktrans with session.payment|floatformat as payment and session.payment_currency as currency %}You earned {{ payment }}.- {{ currency }}{% endblocktrans %}</h3>
+
+<div style="padding-left : 200px; padding-right:200px;">
+
+<p align=left>{% trans "You have the opportunity to donate part of your earnings to the Red Cross for the reconstruction of" %} <a href='http://www.redcross.ch' target=_blank id='redcross'>{% trans "Haiti" %}.</a></p> 
+
+<p align=left><em>{% trans "If you don't want to donate any amount of money, just insert '0'" %}</em></p>
+
+{% if message %}
+<p align=center><strong>{% trans message %}</strong></p>
+{% endif %}
+
+{% if hide_form %}
+
+<p align=center>
+<a href="/experiment/{{ game.id }}/coupon/">{% trans "generate" %}</a> {% trans "the coupon again"%}</a>
+
+{% else %}
+
+<font size="+2"><form action="/experiment/{{ game.id }}/coupon/" method="post"
+		id="donationform">
+        {% trans "Donation amount" %}: <input type="text" name="donation" size="2">.- {% trans "CHF" %}
+	<br/><br/>
+        <input type="submit" value='{% trans "Generate payment coupon" %}'>
+        <input type="reset" value='{% trans "Reset form" %}'>
+</form>
+</font>
+</div>
+
+{% endif %}
+
+{% endblock %}

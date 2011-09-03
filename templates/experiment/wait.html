@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+<script type="text/javascript" src="/static/polling.js"></script>
+<script type="text/javascript">
+<!--
+	$(poll_for_redirect("{{ url }}"));
+-->
+</script>
+{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Game will start soon, please wait." %}</h1>
+<h2>{% trans "The page will reload itself automatically" %}</h2>
+<noscript><h3>JavaScript is not enabled!!</h3><h2>Please revise your settings and reload the page!</h2></noscript>
+
+<script type="text/javascript">
+<!--
+$(function() {
+    setTimeout(function() {
+        $("#warning").show();
+    }, 1000 * 60 * 10); //show warning after 10 minutes
+});
+-->
+</script>
+
+<div id="warning" style="display:none; border:3px solid red;">
+<p>{% trans "There could be a problem with matching you with another participant" %}</p>
+<p>{% trans "Please try " %} <a href="/experiment/logout">{% trans "logging in" %} </a>{% trans " again" %}</p>
+</div>
+
+<hr/>
+{% blocktrans with game.session as game_session %}
+<center><p>Current session: <strong>{{ game_session }}</strong></p></center>
+{% endblocktrans %}
+
+{% endblock %}

@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-24 14:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: experiment/views.py:99
+msgid "Sorry but the session just ended!"
+msgstr "Die Session wurde soeben beendet!"
+
+#: experiment/views.py:141
+msgid "code not correct, please try again"
+msgstr "Der Code ist falsch, bitte versuchen Sie es erneut."
+
+#: experiment/views.py:170
+#, python-format
+msgid "User %(user)s is not a participant. please logout"
+msgstr "user %(user)s ist kein Teilnehmer. Bitte ausloggen"
+
+#: experiment/views.py:180
+#, fuzzy
+msgid "Please read the instructions"
+msgstr "Bitte lesen Sie die Anweisungen gr&uuml;ndlich"
+
+#: experiment/views.py:439
+msgid "You already donated."
+msgstr "Sie haben bereits gespendet."
+
+#: experiment/views.py:458
+msgid "Please insert any amount to donate or 0"
+msgstr ""
+"Bitte tragen Sie den gew&uuml;nschten Betrag Ihrer Spende ein, 0 ist "
+"ebenfalls m&ouml;glich."
+
+#: experiment/views.py:463
+msgid "Donated amount cannot be negative!"
+msgstr "Negative Werte sind nicht m&ouml;glich!"
+
+#: experiment/views.py:468
+#, fuzzy, python-format
+msgid "Donated amount cannot exceed %(payment)s %(currency)s"
+msgstr "Sie k&ouml;nnen nicht mehr als %(payment)s %(currency)s spenden."
+
+#: experiment/views.py:506
+#, python-format
+msgid "Incorrect code \"%s\"! Should be 17 characters long."
+msgstr "Der Code ist falsch \"%s\", er sollte 17 Zeichen haben."
+
+#: experiment/views.py:514
+#, python-format
+msgid "Payment code not authorized: %s"
+msgstr "dieser auszahlungscode existiert nicht: %s"
+
+#: experiment/views.py:520
+msgid "Payment code was accepted. Please proceed with payment."
+msgstr ""
+"Dieser Auszahlungscode ist g&uuml;ltig. Bitte Fahren Sie mit der Auszahlung "
+"fort."
+
+#: templates/404.html:2
+msgid "404 Page not found"
+msgstr "404 Seite nicht gefunden"
+
+#: templates/500.html:2
+msgid "500 Server Error"
+msgstr "500 Serverfehler"
+
+#: templates/login.html:8
+msgid "Your username and password didn't match. Please try again"
+msgstr ""
+"Ihr Benutzername oder Passwort sind ung&uuml;ltig. Bitte versuchen sie es "
+"erneut."
+
+#: templates/login.html:11
+#, fuzzy
+msgid "Please insert you login credentials"
+msgstr "Bitte tragen Sie Ihre authentifizieren Sie sich."
+
+#: templates/admin/base_site.html:4
+msgid "ETHZ SOMS Ultimatum Game site admin"
+msgstr "ETHZ SOMS Ultimatumspiel Administrationsseite"
+
+#: templates/admin/base_site.html:7
+msgid "ETHZ SOMS Ultimatum Game administration"
+msgstr "ETHZ SOMS Ultimatumspiel Administration"
+
+#: templates/experiment/coupon.html:18
+msgid "Chair of Sociology, in particular modeling and simulation"
+msgstr "Professur f&uuml;r Soziologie, insbesondere Modelierung und Simulation"
+
+#: templates/experiment/coupon.html:24
+#, python-format
+msgid ""
+"\n"
+"            Donation coupon of %(amount_paid)s.- %(currency)s\n"
+"            "
+msgstr ""
+"\n"
+"            Spendenbest&auml;tigung &uuml;ber %(amount_paid)s.- "
+"%(currency)s            "
+
+#: templates/experiment/coupon.html:29
+#, fuzzy
+msgid "Participation to experiment"
+msgstr "Herzlich wilkommen zum Experiment"
+
+#: templates/experiment/coupon.html:33
+#, fuzzy
+msgid "Donation to the ICRC"
+msgstr "Spendenbetrag"
+
+#: templates/experiment/coupon.html:45
+#, fuzzy
+msgid "Payment code"
+msgstr "Code senden"
+
+#: templates/experiment/coupon.html:52
+msgid "How to get your payment"
+msgstr "So erhalten Sie ihre Auszahlung"
+
+#: templates/experiment/coupon.html:54
+msgid ""
+"\n"
+"        Present this coupon to the cashier at the official counter\n"
+"        of ETH Z&uuml;rich (F 67.1 in ETH main building, R&auml;mistrasse "
+"101\n"
+"        during the opening hours. Open Monday to Friday 11:00&ndash;13:00)\n"
+"        "
+msgstr ""
+"\n"
+"       Zeigen Sie diesen Coupon am offiziellen Kassenschalter\n"
+"       der ETH Z&uuml;rich (Raum F 67.1 im Hauptgeb&auml;ude an der R&auml;"
+"mistrasse 101\n"
+"       w&auml;hrend der &Ouml;ffnungszeiten (Montag bis Freitag von 11.00 "
+"bis 13.00 Uhr)\n"
+"       "
+
+#: templates/experiment/donation.html:12
+msgid "The experiment is completed, thank you!"
+msgstr "Das Experiment ist beendet, vielen Dank."
+
+#: templates/experiment/donation.html:13
+#, fuzzy, python-format
+msgid "You earned %(payment)s.- %(currency)s"
+msgstr "Sie k&ouml;nnen nicht mehr als %(payment)s.- %(currency)s spenden."
+
+#: templates/experiment/donation.html:17
+msgid ""
+"You have the opportunity to donate part of your earnings to the Red Cross "
+"for the reconstruction of"
+msgstr ""
+"Sie haben die M&ouml;glichkeit einen Teil Ihres Verdienstes an das Rote "
+"Kreuz zu spenden, Im Speziellen f&uuml;r den Wiederaufbau von"
+
+#: templates/experiment/donation.html:17
+msgid "Haiti"
+msgstr "Haiti"
+
+#: templates/experiment/donation.html:19
+msgid "If you don't want to donate any amount of money, just insert '0'"
+msgstr "Falls Sie keine Spende t&auml;tigen m&ouml;chten tragen sie bitte '0' ein."
+
+#: templates/experiment/donation.html:28
+msgid "generate"
+msgstr "Den Coupon"
+
+#: templates/experiment/donation.html:28
+msgid "the coupon again"
+msgstr "erneut generieren"
+
+#: templates/experiment/donation.html:34
+msgid "Donation amount"
+msgstr "Spendenbetrag"
+
+#: templates/experiment/donation.html:34
+msgid "CHF"
+msgstr "CHF"
+
+#: templates/experiment/donation.html:36
+msgid "Generate payment coupon"
+msgstr "Coupon erstellen"
+
+#: templates/experiment/donation.html:37 templates/experiment/payment.html:19
+msgid "Reset form"
+msgstr "zur&uuml;cksetzen"
+
+#: templates/experiment/enter.html:6
+msgid "Welcome to the experiment"
+msgstr "Herzlich wilkommen zum Experiment"
+
+#: templates/experiment/enter.html:29
+msgid "Please type your login code to access the experiment."
+msgstr "Bitte tragen Sie Ihren Code ein um das Experiment zu starten."
+
+#: templates/experiment/enter.html:32
+msgid "send code"
+msgstr "Code senden"
+
+#: templates/experiment/enter.html:33
+msgid "reset"
+msgstr "zur&uuml;cksetzen"
+
+#: templates/experiment/enter.html:42
+#, python-format
+msgid ""
+"\n"
+"<p>session started at <em>%(start_time)s</em> and will end at <em>"
+"%(end_time)s</em> of <em>%(end_date)s</em></p>\n"
+msgstr ""
+"\n"
+"<p>Sitzung gestartet um <em>%(start_time)s</em> und endet um <em>"
+"%(end_time)s</em> vom <em>%(end_date)s</em></p>\n"
+
+#: templates/experiment/enter.html:48
+msgid "There is no ongoing session"
+msgstr "Es findet keine Sitzung statt."
+
+#: templates/experiment/enter.html:51
+#, python-format
+msgid ""
+"\n"
+"<p>The next session is due at <em>%(start_time)s</em> of <em> "
+"%(start_date)s</em></p>\n"
+msgstr ""
+"\n"
+"<p>Die n&auml;chste Sitzung ist am <em>%(start_date)s</em> um <em> "
+"%(start_time)s</em></p>\n"
+
+#: templates/experiment/enter.html:60
+msgid "No sessions are scheduled for the future. Please check back later."
+msgstr ""
+"Zur Zeit sind keine weiteren Sitzungen geplant. Bitte pr&uuml;fen Sie "
+"sp&auml;ter wieder."
+
+#: templates/experiment/error.html:5
+msgid "Oops! An error occurred."
+msgstr "Oops! Ein Fehler ist aufgetreten."
+
+#: templates/experiment/error.html:6
+msgid "Please click"
+msgstr "Bitte klicken Sie"
+
+#: templates/experiment/error.html:6 templates/experiment/logout.html:3
+#: templates/experiment/payment.html:28
+msgid "here"
+msgstr "hier"
+
+#: templates/experiment/error.html:7
+msgid "to go back to the start page and try inserting your login code again."
+msgstr "um zur Startseite zur&uuml;ckzukehren und Ihren Code erneut einzugeben."
+
+#: templates/experiment/error.html:8
+msgid "We apologize for this inconvenience."
+msgstr "Bitte entschuldigen Sie diese Unannehmlichkeiten."
+
+#: templates/experiment/error.html:10
+msgid "If the error happens again, please inform us sending an email to"
+msgstr "Falls der Fehler erneut auftreten sollte senden Sie bitte eine E-mail an"
+
+#: templates/experiment/error.html:10
+msgid "this"
+msgstr "diese"
+
+#: templates/experiment/error.html:10
+msgid "address"
+msgstr "Adresse"
+
+#: templates/experiment/instructions.html:8
+#, fuzzy
+msgid "Please read the instructions and click the button below"
+msgstr "Bitte lesen Sie die Anweisungen gr&uuml;ndlich"
+
+#: templates/experiment/instructions.html:49
+msgid "I have read and understood the instruction."
+msgstr "Ich habe die Anweisungen gelesen und verstanden."
+
+#: templates/experiment/instructions.html:51
+msgid "I want to start the experiment"
+msgstr "Ich m&ouml;chte das Experiment jetzt starten."
+
+#: templates/experiment/instructions.html:56
+msgid "Current session"
+msgstr "laufende Sitzung"
+
+#: templates/experiment/logout.html:2
+#, python-format
+msgid "User %(user)s is not a participant."
+msgstr "User %(user)s ist kein Teilnehmer."
+
+#: templates/experiment/logout.html:3
+msgid "Please logout"
+msgstr "Bitte ausloggen"
+
+#: templates/experiment/payment.html:8
+#, python-format
+msgid "Welcome, %(username)s"
+msgstr "Hallo, %(username)s"
+
+#: templates/experiment/payment.html:11
+#, fuzzy
+msgid "Payment verification"
+msgstr "Code senden"
+
+#: templates/experiment/payment.html:14
+#, fuzzy
+msgid "Please insert the payment code"
+msgstr "Bitte tragen Sie den gew&uuml;nschten Betrag Ihrer Spende ein, 0 ist ebenfalls m&ouml;glich."
+
+#: templates/experiment/payment.html:18
+#, fuzzy
+msgid "Check payment code"
+msgstr "Code senden"
+
+#: templates/experiment/payment.html:27
+msgid "Please authenticate"
+msgstr "Bitte authentifizieren Sie sich"
+
+#: templates/experiment/play.html:15
+msgid "An example with"
+msgstr "Beispielaufgaben werden"
+
+#: templates/experiment/play.html:16
+msgid "trials will be shown now."
+msgstr "nun pr&auml;sentiert."
+
+#: templates/experiment/play.html:16 templates/experiment/play.html.py:21
+#: templates/experiment/play.html:24
+msgid "OK"
+msgstr "OK"
+
+#: templates/experiment/play.html:20
+msgid "Your proposal was accepted!"
+msgstr "Ihr Vorschlag wurde akzeptiert!"
+
+#: templates/experiment/play.html:23
+msgid "Your proposal was rejected ..."
+msgstr "Ihr Voschlag wurde abgelent ..."
+
+#: templates/experiment/play.html:42
+msgid "You"
+msgstr "Sie"
+
+#: templates/experiment/play.html:42 templates/experiment/play.html.py:43
+#: templates/experiment/proposal.html:33 templates/experiment/proposal.html:35
+#: templates/experiment/proposal.html:42 templates/experiment/proposal.html:44
+#: templates/experiment/reply.html:30 templates/experiment/reply.html.py:32
+#: templates/experiment/reply.html:39 templates/experiment/reply.html.py:41
+msgid "n.a."
+msgstr "k.A."
+
+#: templates/experiment/play.html:42
+msgid "calculations left"
+msgstr "ungel&ouml;ste Aufgaben"
+
+#: templates/experiment/play.html:43
+msgid "Other participant"
+msgstr "anderer Mitspieler"
+
+#: templates/experiment/play.html:43
+msgid "calculations"
+msgstr "Aufgaben"
+
+#: templates/experiment/play.html:47
+msgid "Please enter result"
+msgstr "Bitte Resultat eintragen"
+
+#: templates/experiment/play.html:53
+msgid "enter result"
+msgstr "Resultat eintragen"
+
+#: templates/experiment/play.html:54
+msgid "clear"
+msgstr "l&ouml;schen"
+
+#: templates/experiment/play.html:58
+msgid "(or press 'enter')"
+msgstr "(oder 'enter' dr&uuml;cken)"
+
+#: templates/experiment/proposal.html:54
+#, fuzzy, python-format
+msgid ""
+"Enter how to share %(initial_trials)s trials between you and the other "
+"participant."
+msgstr ""
+"Tragen Sie ein wie Sie die %(initial_tasks)s Aufgaben zwischen sich und dem "
+"anderen Mitspieler aufteilen m&ouml;chten."
+
+#: templates/experiment/proposal.html:55
+msgid "Please use the slider below."
+msgstr "Bitte benutzen Sie dazu den Regler."
+
+#: templates/experiment/proposal.html:56
+msgid "N.B."
+msgstr "k.A."
+
+#: templates/experiment/proposal.html:56
+msgid "1000 calculations take approximately 30 minutes."
+msgstr "1000 Aufgaben dauern ca. 30 Minuten."
+
+#: templates/experiment/proposal.html:60
+msgid "calculations."
+msgstr "Aufgaben."
+
+#: templates/experiment/proposal.html:69
+msgid "send proposal"
+msgstr "Vorschlag senden"
+
+#: templates/experiment/reply.html:48
+msgid "accept"
+msgstr "akzeptieren"
+
+#: templates/experiment/reply.html:49
+msgid "reject"
+msgstr "ablehnen"
+
+#: templates/experiment/wait.html:15
+msgid "Game will start soon, please wait."
+msgstr "Das Experiment startet in K&uuml;rze. Bitte warten Sie."
+
+#: templates/experiment/wait.html:16
+msgid "The page will reload itself automatically"
+msgstr "Die Seite wird automatisch neu laden"
+
+#: templates/experiment/wait.html:30
+msgid "There could be a problem with matching you with another participant"
+msgstr ""
+"Es k&ouml;nte ein Problem mit passender Sie mit einem anderen Teilnehmer"
+
+#: templates/experiment/wait.html:31
+#, fuzzy
+msgid "Please try "
+msgstr "Bitte "
+
+#: templates/experiment/wait.html:31
+msgid "logging in"
+msgstr "ausloggen"
+
+#: templates/experiment/wait.html:31
+msgid " again"
+msgstr " wieder"
+
+#: templates/experiment/wait.html:35
+#, python-format
+msgid ""
+"\n"
+"<center><p>Current session: <strong>%(game_session)s</strong></p></center>\n"
+msgstr ""
+"\n"
+"<center><p>laufende Sitzung: <strong>%(game_session)s</strong></p></center>\n"

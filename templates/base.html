@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <link rel="stylesheet" href="/static/screen.css" />
+        <title>{% block title %}ETHZ SOMS Experiment{% endblock %}</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{% url django.views.i18n.javascript_catalog %}"></script>
+        <script type="text/javascript" src="/static/functions.js"></script>
+        <script type="text/javascript" src="/static/feedback.js"></script>
+        {% block javascript %} {% endblock %}
+    </head>
+
+    <body>
+
+        <!-- modal dialogs -->
+        <div id="grayscreen" style="display : none"> </div>
+        <div id="waitingdialog" class="dialog" style="display : none">
+            <!-- the message goes in the span, buttons/links go instead in the
+            bottom div -->
+            <span></span>
+            <div class="bottom"></div>
+        </div> 
+        <div id="inputdialog"  class="dialog" style="display : none">
+            <!-- the message goes in the span, buttons/links go instead in the
+            bottom div -->
+            <span></span>
+            <div class="bottom"></div>
+        </div> 
+
+        <!-- main content area -->
+        <div id="main">
+            <div id="header"><img src="/static/images/eth_logo_black.png" height="60px"/></div>
+            <div id="content"> 
+                {% block content %} {% endblock %} 
+                <div id="feedback">
+                    <div>Leave a <a href="#" id="feedbacklink">feedback</a></div>
+                    <form id="feedbackform" style="display : none">
+                        <textarea rows="5" cols="30" id="feedbackmessage">Write your feedback here (max 150 char)</textarea>
+                        <br/>
+                        <input type="submit" value="send feedback"/>
+                        <input type="reset" value="reset" />
+                    </form>
+                </div>
+            </div>
+            <div id="footer">
+                <a href="/admin">admin</a> :: &copy; 2010 <a href="http://www.ethz.ch/">ETH Z&uuml;rich</a> 
+                :: <a href="mailto:experiment-soms@ethz.ch">contact</a></div>
+        </div>
+
+    </body>
+
+</html>

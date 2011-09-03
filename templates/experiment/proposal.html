@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/ui-lightness/jquery-ui.css"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/polling.js"></script>
+<script type="text/javascript" src="/static/proposal_new.js"></script>
+<script>
+	<!--
+	{% if participant.is_proposer %}
+		var treatment = {{treatment|safe}};
+		treatment.compute = type{{ game.treatment }};
+		$(function(){proposalUI_proposer()});
+	{% else %}
+		$(function() {showModalDialog(msg_waitprop);});
+                $(poll_for_redirect('/experiment/{{ game.id }}/proposal_poll/'));
+
+	{% endif %}
+	-->
+</script>
+{% endblock %}
+
+{% block content %}
+
+<noscript><h3>JavaScript is not enabled!! Please revise your settings!</h3></noscript>
+<div id="recap" style="display : none">
+	<div class="recapbox">
+		<div class="recapheader"></div>
+		<div>
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span> 
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span>
+		</div>
+	</div>
+	<div class="recapbox">
+		<div class="recapheader"></div>
+		<div>
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span> 
+			<span><span class="label"></span><br/>
+				<strong class="propvalue">{% trans "??" %}</strong></span>
+		</div>
+	</div>
+</div>
+
+
+<div id="proposal" style="display : none">
+	<!-- box with the slider -->
+	<!-- <h1>Please, choose how many calculations you want to do</h1> -->
+        <div class="message">
+            {% blocktrans with game.initial_trials as initial_trials %}Enter how to share {{ initial_trials }} trials between you and the other participant.{% endblocktrans %}
+            <br/>{% trans "Please use the slider below." %}
+            <br/><br/> <center><strong>{% trans "N.B." %}</strong>  {% trans "1000 calculations take approximately 30 minutes." %}</center>
+            
+	</div>
+	<div id="sliderbox">
+        <div class="message"><strong id=value>??</strong>{% trans "calculations." %}</div>
+		<div id="slider"></div>
+		<span style="position:relative;left:0%;"></span>
+		<span style="position:relative;left:92%;"></span>
+	</div>
+</div>
+
+<form id="proposalform" style="display : none">
+	<!-- proposal submit button -->
+        <input type="submit" value='{% trans "send proposal" %}' />
+</form>
+
+{% endblock %}

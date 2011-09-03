@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<!-- Instructions for {{ LANGUAGE_CODE }}, {{ participant_type }} -->
+<noscript><h3>JavaScript is not enabled! Please revise your settings</h3></noscript>
+<p>{% trans "Please read the instructions and click the button below" %}</p>
+
+{% ifequal LANGUAGE_CODE 'de' %}
+<iframe src="/static/instructions_DE.htm" width="100%" height="300">
+<!-- Instructions_DE -->
+{% else %}
+<iframe src="/static/instructions_EN.htm" width="100%" height="300">
+<!-- Instructions_DE -->
+{% endifequal %}
+<p>Your browser does not support iframes!</p>
+</iframe>
+
+<br/><br/>
+{% if message %}
+<div style="color : red" ><center><strong>{{ message }}</strong></center></div>
+<br/>
+{% endif %}
+<div style="text-align : left; padding-left:150px; padding-right: 150px;">
+	<form action="/experiment/{{ game.id }}/start/" method="post" id="startform">
+            <input type="checkbox" name="instructions_read">{% trans "I have read and understood the instruction." %} <br/>
+		<center>
+                    <input type="submit" value="{% trans "I want to start the experiment" %}">
+		</center>
+	</form>
+</div>
+<hr/>
+<center><p>{% trans "Current session" %}: <strong>{{ session }}</strong></p></center>
+{% endblock %}

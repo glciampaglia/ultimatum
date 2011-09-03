@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block javascript %}
+{# TODO <dom 12 set 2010, 17.43.10, CEST> gettext in Javascript code? #}
+<script type="text/javascript" src="/static/polling.js"></script>
+<script type="text/javascript" src="/static/game.js"></script>
+<script>
+	<!--
+	{# called when making the trial #}
+	{% if is_trial %}
+	$(function() {
+		audio('Glass')
+		window.setTimeout(function(){ audio('Glass') },500);
+        showModalInputDialog('{% trans "An example with" %} ' + {{ my_trials }} + 
+        ' {% trans "trials will be shown now." %}', function(i) {},'{%  trans "OK" %}'); });
+	{% else %}
+		{% if participant.is_proposer %}
+			{% if game.proposal_accepted %}
+            $(function() { showModalInputDialog('{% trans "Your proposal was accepted!" %}', 
+				function(i) {}, '{%  trans "OK" %}'); });
+			{% else %}
+            $(function() { showModalInputDialog('{% trans "Your proposal was rejected ..." %}', 
+				function(i) {}, '{%  trans "OK" %}'); });
+			{% endif %}
+		{% endif %}
+	{% endif %}
+	$(make_game({{ my_id }},{{ opponent_id }},{{ game.id }},{{ my_trials }},{{ opponent_trials }}, "{{ post_game_url }}"))
+	-->
+</script>
+{% endblock %}
+
+{% block content %}
+
+<noscript><h3>JavaScript is not enabled!! Please revise your settings!</h3></noscript>
+<div id="frames">
+	<!-- frames go here -->
+	<iframe height="33%" width="44%" id="myframe" src="/static/table.html"></iframe>
+	<iframe height="33%" width="44%" id="oppframe" src="/static/table.html"></iframe>
+</div>
+<div id="status">
+    <span>{% trans "You" %}: <strong id="mystatus">{% trans "n.a." %}</strong> {% trans "calculations left" %}.</span>
+    <span>{% trans "Other participant" %}: <strong id="oppstatus">{% trans "n.a." %}</strong> {% trans "calculations" %}.</span>
+</div>
+<div id="controls">
+	<!-- controls go here--> 
+        <div>{% trans "Please enter result" %}</div>
+	<div>
+		<div id="question"></div> = 
+		<form id="operationform">
+			<input size="2" type="textarea"/>
+			<br/>
+                        <input id="submit" type="submit" action="post" value="{% trans 'enter result' %}"/>
+                        <input id="reset" type="reset" value="{% trans 'clear' %}" />
+		</form>
+	</div>
+	<div>
+            <small>{% trans "(or press 'enter')" %}</small>
+	</div>
+</div>
+
+{% endblock %}

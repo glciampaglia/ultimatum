@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Oops! An error occurred." %}</h2>
+<p>{% trans "Please click" %} <a href="/experiment/logout/">{% trans "here" %}</a> 
+{% trans "to go back to the start page and try inserting your login code again." %} 
+{% trans "We apologize for this inconvenience." %}</p>
+
+<p>{% trans "If the error happens again, please inform us sending an email to" %} <a href="mailto:ciampagg@ethz.ch?subject=[ULTIMATUM-BUG]">{% trans "this" %}</a> {% trans "address" %}.
+{% endblock %}

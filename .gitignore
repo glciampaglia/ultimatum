@@ -1,0 +1,5 @@
+*.swp
+.exclude.list
+_darcs
+publish.sh
+mydata.db
