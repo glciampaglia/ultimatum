@@ -309,21 +309,26 @@ def proposal(request, game_id):
     if request.is_ajax():
         # store proposal in game, advance stage for both participants
         game.proposed_trials = ','.join(request.POST.getlist('proposal[]'))
+        game.proposal_accepted = 1     # COMMENT FOR ULTIMATUM
         game.save()
         participant.proposal_time = float(request.POST['proposal_time'])
         participant.save()
+        Trial.objects.filter(Q(participant=game.player_a) |
+                Q(participant=game.player_b)).delete()
         for player in [ game.player_a, game.player_b ]:
-            player.stage = 'R'
+            player.stage = 'G'     # SET TO 'R' IN ULTIMATUM
             player.save()
         response_data = { 'redirect' :
-                reverse('experiment.views.reply',
-                    args=(game.id,)) }
+                reverse('experiment.views.game', args=(game.id,)) }     # SHOULD BE 'REPLY' IN ULTIMATUM
         return HttpResponse(simplejson.dumps(response_data),
                 mimetype='application/javascript')
     else:
-        return render_to_response('experiment/proposal.html',\
+        #return render_to_response('experiment/proposal.html',\
+        #        dict(participant=participant, game=game,
+        #            treatment=simplejson.dumps(game.session.get_parameters(game.treatment-1))  # UNCOMMENT FOR ULTIMATUM
+        return render_to_response('experiment/proposal.html',
                 dict(participant=participant, game=game,
-                    treatment=simplejson.dumps(game.session.get_parameters(game.treatment-1)),))
+                    treatment=simplejson.dumps(game.session.get_parameters(game.treatment-1))))
 
 @login_required
 def proposal_poll(request, game_id):
@@ -333,7 +338,8 @@ def proposal_poll(request, game_id):
         # redirect to reply page
         if game.proposed_trials:
             response_data = {'redirect' :
-                    reverse('experiment.views.reply',
+            		reverse('experiment.views.game',
+                   # reverse('experiment.views.reply',
                         args=(game.id,)) }
         else:
             response_data = {}
@@ -341,6 +347,10 @@ def proposal_poll(request, game_id):
                 mimetype='application/javascript')
     else:
         raise RuntimeError('not ajax')
+
+
+
+
 
 @login_required
 @redirecting
@@ -350,19 +360,19 @@ def reply(request, game_id):
     if request.is_ajax():
         # store reply in game, advance 'stage' for both participant
         game.proposal_accepted = int(request.POST['reply'])
-        game.save()
-        participant.proposal_time = float(request.POST['reply_time'])
-        participant.save()
-        Trial.objects.filter(Q(participant=game.player_a) |
-                Q(participant=game.player_b)).delete()
-        for player in [ game.player_a, game.player_b ]:
-            player.stage = 'G'
-            player.save()
-        response_data = { 
-                'redirect' : reverse('experiment.views.game', args=(game.id,))
-        }
-        return HttpResponse(simplejson.dumps(response_data),
-                    mimetype='application/javascript')
+    	game.save()
+    	participant.proposal_time = float(request.POST['reply_time'])
+    	participant.save()
+    	Trial.objects.filter(Q(participant=game.player_a) |
+        	    Q(participant=game.player_b)).delete()
+    	for player in [ game.player_a, game.player_b ]:
+        	player.stage = 'G'
+        	player.save()
+    	response_data = { 
+    	        'redirect' : reverse('experiment.views.game', args=(game.id,))
+    	}
+    	return HttpResponse(simplejson.dumps(response_data),
+    	            mimetype='application/javascript')
     else:
         return render_to_response('experiment/reply.html',
                 dict(participant=participant, game=game))
